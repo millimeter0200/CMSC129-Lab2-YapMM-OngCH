@@ -51,7 +51,10 @@
 
         <!-- Dog Info -->
         <div>
-            <p class="font-bold text-lg">{{ $dog->name }}</p>
+            <a href="{{ route('dogs.show', $dog) }}"
+                class="font-bold text-lg text-blue-600 hover:underline">
+                {{ $dog->name }}
+            </a>
             <div class="text-gray-600 text-sm space-y-1">
 
                 <!-- Location + Temperament -->
