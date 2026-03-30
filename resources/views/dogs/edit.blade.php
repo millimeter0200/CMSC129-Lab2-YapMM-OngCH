@@ -2,7 +2,12 @@
 
 @section('content')
 
-<h2 class="text-xl font-semibold mb-4">Edit Dog</h2>
+<h2 class="text-xl font-semibold mb-4">Edit Dog
+    <a href="{{ route('dogs.index') }}"
+    class="bg-gray-300 px-4 py-2 rounded">
+        < Back
+    </a>
+</h2>
 
 <form action="{{ route('dogs.update', $dog) }}" method="POST" class="bg-white p-6 rounded-xl shadow space-y-4">
     @csrf
