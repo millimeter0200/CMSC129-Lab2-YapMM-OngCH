@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h2 class="text-xl font-semibold mb-4">Trashed Dogs</h2>
+<h2 class="text-xl font-semibold mb-4">Trashed List</h2>
 
 <div class="grid gap-4">
 @foreach($dogs as $dog)
