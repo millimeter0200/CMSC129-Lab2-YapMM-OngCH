@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- TITLE + FILTERS -->
-<div class="flex items-center gap-6 mb-6">
+<div class="flex items-center mb-6">
 
     <!-- Title -->
     <h2 class="text-2xl md:text-3xl font-semibold text-gray-700 whitespace-nowrap">
@@ -12,13 +12,13 @@
 
     <!-- Filters -->
     <form method="GET" action="{{ route('dogs.index') }}"
-          class="flex items-center gap-3 max-w-xl">
+          class="flex items-center gap-3 max-w-xl ml-12">
 
         <input type="text" name="search" placeholder="Search"
             value="{{ request('search') }}"
             class="flex-1 border rounded-lg px-3 py-2 h-10 text-xs" style="width: 100px">
 
-        <select name="location" class="border rounded-lg px-3 py-2">
+        <select name="location" class="flex-1 border rounded-lg px-3 py-2 h-10 text-xs" style="width: 235px">
             <option value="">All Locations</option>
             @foreach($locations as $id => $name)
                 <option value="{{ $id }}" {{ request('location') == $id ? 'selected' : '' }}>

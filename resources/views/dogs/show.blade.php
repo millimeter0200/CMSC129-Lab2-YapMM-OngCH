@@ -10,7 +10,7 @@
     </h2>
 
     <!-- Details -->
-    <div class="space-y-2 text-gray-700">
+    <div class="text-gray-700 space-y-1 mb-4">
 
         <p><strong>Location:</strong> {{ $dog->location->name }}</p>
 
@@ -23,7 +23,7 @@
     </div>
 
     <!-- Actions -->
-    <div class="mt-6 flex gap-3">
+    <div class="flex gap-3 mt-4">
 
         <a href="{{ route('dogs.edit', $dog) }}"
            class="bg-gray-200 px-4 py-2 rounded hover:bg-gray-300">
@@ -32,7 +32,7 @@
 
         <a href="{{ route('dogs.index') }}"
            class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-            Back to Home
+            Back
         </a>
 
     </div>
