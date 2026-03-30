@@ -26,7 +26,7 @@
         </div>
 
         <div class="flex gap-3">
-            <a href="{{ route('dogs.index') }}"
+            <a href="{{ route('welcome') }}"
                class="bg-gray-200 px-4 py-2 rounded-lg hover:bg-gray-300 transition">
                 Home
             </a>
