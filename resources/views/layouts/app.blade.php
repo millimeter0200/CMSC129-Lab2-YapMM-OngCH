@@ -6,9 +6,12 @@
     <title>UPV Dog Tracker</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <!-- Pixel Font Import (Google Fonts Example) -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
-<body class="bg-gradient-to-br from-blue-100 to-yellow-100 min-h-screen font-sans">
+<body class="bg-gradient-to-br from-blue-100 to-yellow-100 min-h-screen" style="font-family: 'Press Start 2P', cursive;">
 
     <!-- HEADER -->
     <div class="bg-white shadow-md px-6 py-4 flex justify-between items-center">
