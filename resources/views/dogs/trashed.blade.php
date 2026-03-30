@@ -1,23 +1,38 @@
-<h1>Trashed Dogs</h1>
+@extends('layouts.app')
 
-<a href="{{ route('dogs.index') }}">Back to List</a>
+@section('content')
 
-<ul>
+<h2 class="text-xl font-semibold mb-4">Trashed Dogs</h2>
+
+<div class="grid gap-4">
 @foreach($dogs as $dog)
-    <li>
-        {{ $dog->name }} - {{ $dog->location->name }}
+    <div class="bg-white p-4 rounded-xl shadow flex justify-between items-center">
 
-        <form action="{{ route('dogs.restore', $dog->id) }}" method="POST" style="display:inline;">
-            @csrf
-            @method('PATCH')
-            <button type="submit">Restore</button>
-        </form>
+        <p>{{ $dog->name }} - {{ $dog->location->name }}</p>
 
-        <form action="{{ route('dogs.forceDelete', $dog->id) }}" method="POST" style="display:inline;">
-            @csrf
-            @method('DELETE')
-            <button type="submit">Delete Permanently</button>
-        </form>
-    </li>
+        <div class="flex gap-2">
+
+            <form action="{{ route('dogs.restore', $dog->id) }}" method="POST">
+                @csrf
+                @method('PATCH')
+                <button class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">
+                    Restore
+                </button>
+            </form>
+
+            <form action="{{ route('dogs.forceDelete', $dog->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700">
+                    Delete Permanently
+                </button>
+            </form>
+
+        </div>
+
+    </div>
 @endforeach
-</ul>
+</div>
+
+@endsection
+
