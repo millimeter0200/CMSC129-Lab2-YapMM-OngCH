@@ -10,33 +10,63 @@
 
     <!-- Dog Name -->
     <input type="text" name="name" placeholder="Dog Name"
-        class="w-full border p-2 rounded">
+        value="{{ old('name') }}"
+        class="w-full border p-2 rounded @error('name') border-red-500 @enderror">
+
+    @error('name')
+        <p class="text-red-500 text-sm">{{ $message }}</p>
+    @enderror
+
 
     <!-- Location -->
     <input type="text" name="location_name" placeholder="Location"
-        class="w-full border p-2 rounded">
+        value="{{ old('location_name') }}"
+        class="w-full border p-2 rounded @error('location_name') border-red-500 @enderror">
+
+    @error('location_name')
+        <p class="text-red-500 text-sm">{{ $message }}</p>
+    @enderror
+
 
     <!-- Temperament -->
     <input type="text" name="temperament" placeholder="Temperament"
-        class="w-full border p-2 rounded">
+        value="{{ old('temperament') }}"
+        class="w-full border p-2 rounded @error('temperament') border-red-500 @enderror">
+
+    @error('temperament')
+        <p class="text-red-500 text-sm">{{ $message }}</p>
+    @enderror    
+
 
     <!-- Gender -->
     <select name="gender"
-        class="w-full border p-2 rounded">
+        class="w-full border p-2 rounded @error('gender') border-red-500 @enderror">
         <option value="">Select Gender</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
+        <option value="Male" {{ old('gender') == 'Male' ? 'selected' : '' }}>Male</option>
+        <option value="Female" {{ old('gender') == 'Female' ? 'selected' : '' }}>Female</option>
     </select>
+
+    @error('gender')
+        <p class="text-red-500 text-sm">{{ $message }}</p>
+    @enderror
+
 
     <!-- Color -->
     <input type="text" name="color"
         placeholder="Color"
-        class="w-full border p-2 rounded">
+        value="{{ old('color') }}"
+        class="w-full border p-2 rounded @error('color') border-red-500 @enderror">
+    
+    @error('color')
+        <p class="text-red-500 text-sm">{{ $message }}</p>
+    @enderror
+
 
     <!-- Buttons -->
     <div class="flex gap-3 pt-2">
 
-        <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+        <button type="submit"
+            class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
             Save
         </button>
 
