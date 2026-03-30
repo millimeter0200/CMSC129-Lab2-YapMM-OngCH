@@ -75,9 +75,11 @@
                 Edit
             </a>
 
-            <form action="{{ route('dogs.destroy', $dog) }}" method="POST">
+            <form action="{{ route('dogs.destroy', $dog) }}" method="POST"
+                onsubmit="return confirm('Are you sure you want to delete this dog?')">
                 @csrf
                 @method('DELETE')
+
                 <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">
                     Delete
                 </button>

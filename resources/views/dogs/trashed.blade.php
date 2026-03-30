@@ -20,7 +20,8 @@
                 </button>
             </form>
 
-            <form action="{{ route('dogs.forceDelete', $dog->id) }}" method="POST">
+            <form action="{{ route('dogs.forceDelete', $dog->id) }}" method="POST"
+                onsubmit="return confirm('This will permanently delete the dog. Continue?')">
                 @csrf
                 @method('DELETE')
                 <button class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700">
