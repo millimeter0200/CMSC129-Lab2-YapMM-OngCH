@@ -45,6 +45,11 @@
 
     <!-- CONTENT -->
     <div class="max-w-5xl mx-auto p-6">
+        @if(session('success'))
+            <div class="bg-green-200 text-green-800 px-4 py-2 rounded m-4">
+                {{ session('success') }}
+            </div>
+        @endif
         @yield('content')
     </div>
 
