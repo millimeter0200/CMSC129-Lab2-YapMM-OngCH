@@ -18,11 +18,11 @@
             value="{{ request('search') }}"
             class="flex-1 border rounded-lg px-3 py-2 h-10 text-xs" style="width: 100px">
 
-        <select name="location" class="flex-1 border rounded-lg px-3 py-2 h-10 text-xs" style="width: 230px">
+        <select name="location" class="border rounded-lg px-3 py-2">
             <option value="">All Locations</option>
-            @foreach($locations as $loc)
-                <option value="{{ $loc }}" {{ request('location') == $loc ? 'selected' : '' }}>
-                    {{ $loc }}
+            @foreach($locations as $id => $name)
+                <option value="{{ $id }}" {{ request('location') == $id ? 'selected' : '' }}>
+                    {{ $name }}
                 </option>
             @endforeach
         </select>
@@ -52,9 +52,19 @@
         <!-- Dog Info -->
         <div>
             <p class="font-bold text-lg">{{ $dog->name }}</p>
-            <p class="text-gray-600 text-sm">
-                {{ $dog->location->name }} • {{ $dog->temperament }}
-            </p>
+            <div class="text-gray-600 text-sm space-y-1">
+
+                <!-- Location + Temperament -->
+                <p>
+                    {{ $dog->location->name }} • {{ $dog->temperament }}
+                </p>
+
+                <!-- Gender + Color -->
+                <p>
+                    {{ $dog->gender }} • {{ $dog->color }}
+                </p>
+
+            </div>
         </div>
 
         <!-- Actions -->
@@ -75,6 +85,10 @@
 
         </div>
 
+    </div>
+
+    <div class="mt-6 flex justify-center">
+        {{ $dogs->links() }}
     </div>
 @endforeach
 </div>

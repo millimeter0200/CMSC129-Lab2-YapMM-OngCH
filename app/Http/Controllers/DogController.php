@@ -12,30 +12,42 @@ class DogController extends Controller
     {
         $query = Dog::with('location');
 
-        // 🔍 Search by name
-        if ($request->search) {
-            $query->where('name', 'ILIKE', '%' . $request->search . '%');
-        }
+        // SEARCH
+        if ($request->filled('search')) {
+            $search = $request->search;
 
-        // 🧭 Filter by location
-        if ($request->location) {
-            $query->whereHas('location', function ($q) use ($request) {
-                $q->where('name', $request->location);
+            $query->where(function ($q) use ($search) {
+                $q->where('name', 'ilike', "%$search%")
+                ->orWhere('gender', 'ilike', "%$search%")
+                ->orWhere('color', 'ilike', "%$search%")
+                ->orWhere('temperament', 'ilike', "%$search%")
+                ->orWhereHas('location', function ($loc) use ($search) {
+                    $loc->where('name', 'ilike', "%$search%");
+                });
             });
         }
 
-        // 🎭 Filter by temperament
-        if ($request->temperament) {
+        // FILTER: location
+        if ($request->filled('location')) {
+            $query->where('location_id', $request->location);
+        }
+
+        // FILTER: temperament
+        if ($request->filled('temperament')) {
             $query->where('temperament', $request->temperament);
         }
 
-        $dogs = $query->latest()->get();
+        // PAGINATION 
+        $dogs = $query->paginate(10);
 
-        // get all unique values for filters
-        $locations = Location::pluck('name');
-        $temperaments = Dog::select('temperament')->distinct()->pluck('temperament');
+        // Keep filters when paginating
+        $dogs->appends($request->all());
 
-        return view('dogs.index', compact('dogs', 'locations', 'temperaments'));
+        return view('dogs.index', [
+            'dogs' => $dogs,
+            'locations' => Location::pluck('name', 'id'),
+            'temperaments' => Dog::select('temperament')->distinct()->pluck('temperament')
+        ]);
     }
 
     public function create()
@@ -46,9 +58,11 @@ class DogController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'location_name' => 'required',
-            'temperament' => 'required',
+            'name' => 'required|string|max:255',
+            'gender' => 'required|string',
+            'color' => 'required|string|max:255',
+            'location_name' => 'required|string',
+            'temperament' => 'required|string',
         ]);
 
         // find or create location
@@ -58,6 +72,8 @@ class DogController extends Controller
 
         Dog::create([
             'name' => $request->name,
+            'gender' => $request->gender,
+            'color' => $request->color,
             'location_id' => $location->id,
             'temperament' => $request->temperament,
         ]);
@@ -78,9 +94,11 @@ class DogController extends Controller
     public function update(Request $request, Dog $dog)
     {
         $request->validate([
-            'name' => 'required',
-            'location_name' => 'required',
-            'temperament' => 'required',
+            'name' => 'required|string|max:255',
+            'gender' => 'required|string',
+            'color' => 'required|string|max:255',
+            'location_name' => 'required|string',
+            'temperament' => 'required|string',
         ]);
 
         // find or create location
@@ -90,6 +108,8 @@ class DogController extends Controller
 
         $dog->update([
             'name' => $request->name,
+            'gender' => $request->gender,
+            'color' => $request->color,
             'location_id' => $location->id,
             'temperament' => $request->temperament,
         ]);

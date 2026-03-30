@@ -11,10 +11,10 @@ class Dog extends Model
 
     protected $fillable = [
         'name',
+        'gender',
+        'color',
         'location_id',
         'temperament',
-        'description',
-        'photo'
     ];
 
     public function location()
