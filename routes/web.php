@@ -7,6 +7,10 @@ Route::get('/', function () {
     return redirect()->route('dogs.index');
 });
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
 Route::resource('dogs', DogController::class);
 Route::get('dogs/trashed/all', [DogController::class, 'trashed'])->name('dogs.trashed');
 Route::patch('dogs/{id}/restore', [DogController::class, 'restore'])->name('dogs.restore');

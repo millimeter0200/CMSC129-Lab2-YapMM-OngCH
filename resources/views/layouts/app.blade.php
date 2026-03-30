@@ -15,9 +15,15 @@
 
     <!-- HEADER -->
     <div class="bg-white shadow-md px-6 py-4 flex justify-between items-center">
-        <h1 class="text-2xl font-bold text-gray-800">
-            🐶 UPV Dog Tracker
-        </h1>
+        <div class="flex items-center gap-3">
+            <img src="{{ asset('images/logo.png') }}"
+                alt="Logo"
+                class="w-8 h-8 object-contain">
+
+            <h1 class="text-2xl font-bold text-gray-800">
+                UPV Dog Tracker
+            </h1>
+        </div>
 
         <div class="flex gap-3">
             <a href="{{ route('dogs.index') }}"

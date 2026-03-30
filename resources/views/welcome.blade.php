@@ -5,29 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UPV Dog Tracker</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
-
-    <!-- Tailwind -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
-<body class="bg-gradient-to-br from-blue-100 to-yellow-100 min-h-screen flex items-center justify-center font-sans">
+<body class="m-0 p-0 overflow-hidden">
 
-    <div class="bg-white shadow-xl rounded-2xl p-10 text-center max-w-md">
-        <h1 class="text-3xl font-bold text-gray-800 mb-3">
-            🐶 UPV Dog Tracker
-        </h1>
+    <div class="relative w-screen h-screen">
 
-        <p class="text-gray-600 mb-6">
-            Track, manage, and care for campus dogs easily.
-        </p>
+        <!-- Background (now includes title) -->
+        <img src="{{ asset('images/welcome-bg.png') }}"
+             class="absolute top-0 left-0 w-full h-full object-cover"
+             style="image-rendering: pixelated;">
 
-        <a href="{{ route('dogs.index') }}"
-           class="inline-block bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition shadow">
-            Enter App →
-        </a>
+        <!-- Start Button -->
+
+            <a href="{{ route('dogs.index') }}"
+                style="
+                    position: absolute;
+                    top: 270px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    z-index: 999;
+                ">
+
+                <img src="{{ asset('images/start-button.png') }}"
+                    style="width: 300px; image-rendering: pixelated;">
+            </a>
+
     </div>
 
 </body>
