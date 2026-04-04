@@ -78,22 +78,22 @@ http://127.0.0.1:8000
 ## 📸 Screenshots of the Application
 
 ### Welcome Page
-![Welcome Page](screenshots/welcome_page.png)
+![Welcome Page](welcome_page.png)
 
 ### Home Page
-![Home](screenshots/home.png)
+![Home](home.png)
 
 ### Add Dog
-![Add Dog](screenshots/add.png)
+![Add Dog](add.png)
 
 ### Edit Dog
-![Edit Dog](screenshots/edit.png)
+![Edit Dog](edit.png)
 
 ### Show Dog
-![Show Dog](screenshots/show.png)
+![Show Dog](show.png)
 
 ### Trash List
-![Trash](screenshots/trash.png)
+![Trash](strash.png)
 
 ⸻
 
