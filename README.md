@@ -82,22 +82,22 @@ http://127.0.0.1:8000
 ## 📸 Screenshots of the Application
 
 ### Welcome Page
-![Welcome Page](./welcome_page.png)
+![Welcome Page](https://raw.githubusercontent.com/millimeter0200/CMSC129-Lab2-YapMM-OngCH/main/welcome_page.png)
 
 ### Home Page
-![Home](./home.png)
+![Home](https://raw.githubusercontent.com/millimeter0200/CMSC129-Lab2-YapMM-OngCH/main/home.png)
 
 ### Add Dog
-![Add Dog](./add.png)
+![Add Dog](https://raw.githubusercontent.com/millimeter0200/CMSC129-Lab2-YapMM-OngCH/main/add.png)
 
 ### Edit Dog
-![Edit Dog](./edit.png)
+![Edit Dog](https://raw.githubusercontent.com/millimeter0200/CMSC129-Lab2-YapMM-OngCH/main/edit.png)
 
 ### Show Dog
-![Show Dog](./show.png)
+![Show Dog](https://raw.githubusercontent.com/millimeter0200/CMSC129-Lab2-YapMM-OngCH/main/show.png)
 
 ### Trash List
-![Trash](./trash.png)
+![Trash](https://raw.githubusercontent.com/millimeter0200/CMSC129-Lab2-YapMM-OngCH/main/trash.png)
 
 
 
@@ -162,7 +162,6 @@ app/Http/Controllers/
 	•	Uses Eloquent queries and pagination
 
 
-
 🖼️ Views (Blade Templates)
 
 Located in:
@@ -176,7 +175,6 @@ resources/views/dogs/
 	•	trashed.blade.php → shows deleted dogs
 
 Views use Blade templating and Tailwind CSS for styling.
-
 
 
 
@@ -195,3 +193,7 @@ Route::resource('dogs', DogController::class);
 Route::get('dogs/trashed/all', ...);
 Route::patch('dogs/{id}/restore', ...);
 Route::delete('dogs/{id}/force-delete', ...);
+
+
+
+
