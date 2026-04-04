@@ -14,7 +14,7 @@ The purpose of this system is to provide an organized and efficient way of track
 ```bash
 git clone https://github.com/millimeter0200/CMSC129-Lab2-YapMM-OngCH.git
 cd CMSC129-Lab2-YapMM-OngCH
-
+```
 2. Install dependencies
 
 composer install
@@ -148,9 +148,7 @@ public function location() {
 
 🎮 Controllers
 
-Located in:
-
-app/Http/Controllers/
+Located in: "app/Http/Controllers/"
 
 	•	DogController.php
 	•	Handles all business logic:
@@ -164,9 +162,7 @@ app/Http/Controllers/
 
 🖼️ Views (Blade Templates)
 
-Located in:
-
-resources/views/dogs/
+Located in: "resources/views/dogs/"
 
 	•	index.blade.php → displays dog list + filters
 	•	create.blade.php → form to add dogs
@@ -180,9 +176,7 @@ Views use Blade templating and Tailwind CSS for styling.
 
 🔗 Routes
 
-Defined in:
-
-routes/web.php
+Defined in: "routes/web.php"
 
 	•	Resource routes:
 
