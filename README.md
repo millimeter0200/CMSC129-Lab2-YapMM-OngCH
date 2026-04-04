@@ -5,7 +5,8 @@ The UPV Dog Tracker is a web-based application designed to manage and monitor do
 
 The purpose of this system is to provide an organized and efficient way of tracking dogs, making it easier to manage records and filter information based on user needs.
 
----
+
+
 
 ## ⚙️ Installation and Setup Instructions
 
@@ -26,7 +27,9 @@ cp .env.example .env
 
 Then configure your database in .env
 
-⸻
+
+
+
 
 🗄️ Database Setup Guide (PostgreSQL)
 
@@ -46,7 +49,7 @@ DB_USERNAME=your_username
 DB_PASSWORD=your_password
 
 
-⸻
+
 
 🔁 Migration Commands
 
@@ -59,7 +62,8 @@ If needed (reset):
 php artisan migrate:fresh
 
 
-⸻
+
+
 
 ▶️ Run the Application
 
@@ -70,32 +74,32 @@ Then open:
 http://127.0.0.1:8000
 
 
-⸻
+
+
+
+
 
 ## 📸 Screenshots of the Application
 
 ### Welcome Page
-## 📸 Screenshots of the Application
-
-### Welcome Page
-![Welcome Page](welcome_page.png)
+![Welcome Page](./welcome_page.png)
 
 ### Home Page
-![Home](home.png)
+![Home](./home.png)
 
 ### Add Dog
-![Add Dog](add.png)
+![Add Dog](./add.png)
 
 ### Edit Dog
-![Edit Dog](edit.png)
+![Edit Dog](./edit.png)
 
 ### Show Dog
-![Show Dog](show.png)
+![Show Dog](./show.png)
 
 ### Trash List
-![Trash](strash.png)
+![Trash](./trash.png)
 
-⸻
+
 
 ✨ Features Implemented
 	•	Add new dog records
@@ -112,7 +116,8 @@ http://127.0.0.1:8000
 	•	Form validation with error messages
 	•	Clean and responsive UI using Tailwind CSS
 
-⸻
+
+
 
 🏗️ MVC Architecture Explanation
 
@@ -131,14 +136,15 @@ app/Models/
 
 public function location() {
     return $this->belongsTo(Location::class);
-}
+	}
 
 
 	•	Location.php
 	•	Stores location data
 	•	Related to multiple dogs
 
-⸻
+
+
 
 🎮 Controllers
 
@@ -155,7 +161,7 @@ app/Http/Controllers/
 	•	Filtering and searching logic
 	•	Uses Eloquent queries and pagination
 
-⸻
+
 
 🖼️ Views (Blade Templates)
 
@@ -171,7 +177,8 @@ resources/views/dogs/
 
 Views use Blade templating and Tailwind CSS for styling.
 
-⸻
+
+
 
 🔗 Routes
 
@@ -188,7 +195,3 @@ Route::resource('dogs', DogController::class);
 Route::get('dogs/trashed/all', ...);
 Route::patch('dogs/{id}/restore', ...);
 Route::delete('dogs/{id}/force-delete', ...);
-
-
-⸻
-
