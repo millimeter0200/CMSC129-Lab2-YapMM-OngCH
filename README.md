@@ -75,22 +75,25 @@ http://127.0.0.1:8000
 ## 📸 Screenshots of the Application
 
 ### Welcome Page
-![Welcome Page](https://raw.githubusercontent.com/millimeter0200/CMSC129-Lab2-YapMM-OngCH/main/screenshots/welcome_page.png)
+## 📸 Screenshots of the Application
+
+### Welcome Page
+![Welcome Page](screenshots/welcome_page.png)
 
 ### Home Page
-![Home](https://raw.githubusercontent.com/millimeter0200/CMSC129-Lab2-YapMM-OngCH/main/screenshots/home.png)
+![Home](screenshots/home.png)
 
 ### Add Dog
-![Add Dog](https://raw.githubusercontent.com/millimeter0200/CMSC129-Lab2-YapMM-OngCH/main/screenshots/add.png)
+![Add Dog](screenshots/add.png)
 
 ### Edit Dog
-![Edit Dog](https://raw.githubusercontent.com/millimeter0200/CMSC129-Lab2-YapMM-OngCH/main/screenshots/edit.png)
+![Edit Dog](screenshots/edit.png)
 
 ### Show Dog
-![Show Dog](https://raw.githubusercontent.com/millimeter0200/CMSC129-Lab2-YapMM-OngCH/main/screenshots/show.png)
+![Show Dog](screenshots/show.png)
 
 ### Trash List
-![Trash](https://raw.githubusercontent.com/millimeter0200/CMSC129-Lab2-YapMM-OngCH/main/screenshots/trash.png)
+![Trash](screenshots/trash.png)
 
 ⸻
 
